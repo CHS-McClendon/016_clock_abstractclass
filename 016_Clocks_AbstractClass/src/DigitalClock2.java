@@ -1,7 +1,8 @@
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
+//import java.util.Timer;
+import javax.swing.Timer;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,14 +26,14 @@ public class DigitalClock2 extends JFrame implements ActionListener {
 
 	public DigitalClock2() {
 		setLayout(new FlowLayout());
-		setSize(400, 200);
+		setSize(500, 200);
 		setTitle("Digital Clock");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		add(lblShowTime);
 		display();
-		Timer displayTime = new Timer();
-		//displayTime.start();
+		Timer displayTime = new Timer(1000, this);
+		displayTime.start();
 	}
 
 	private void display() {
